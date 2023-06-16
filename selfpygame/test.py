@@ -1,4 +1,7 @@
 ﻿from functools import singledispatch
+from vector3 import Vector3
+from mathf import Mathf
+import numpy
 
 
 class OL:
@@ -13,6 +16,26 @@ class OL:
 
 
 if __name__ == '__main__':
-    ol1 = OL.computer(90, 10)
-    ol2 = OL.computer(50, 20.0)
-    print(f'ol1: {ol1}\nol2: {ol2}')
+    v1 = Vector3(2, 4, 6)
+    v2 = Vector3(3, 5, 7)
+
+#     print(f'v1: {v1}\nv2: {v2}\n\
+# ----------------\n\
+# +: {(v1 + v2)}\n-: {(v1 - v2)}\n\
+# *: {(v1 * v2)}\n*: {(v1 * 2)}')
+
+    # print(Vector3.distance(v1, v2))
+
+    # print(Mathf.round(Vector3.distance(v1, v2), 1))
+
+    print(Mathf.lerp(0, 1, 5))
+
+'''
+v1: (2,4,6)
+v2: (3,5,7)
+----------------
++: (5,9,13)
+-: (-1,-1,-1)
+*: (6,20,42)
+*: (4,8,12)
+'''

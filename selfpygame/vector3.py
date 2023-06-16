@@ -1,5 +1,6 @@
 from functools import singledispatch
 import typing
+import numpy
 
 # ? operators: https://yumarublog.com/python/operator/
 
@@ -17,7 +18,7 @@ class Vector3:
                 self.y + other.y,
                 self.z + other.z
             )
-        raise TypeError('Type is not Vector3.')
+        raise TypeError()
 
     def __sub__(self, other):
         if isinstance(other, Vector3):
@@ -26,7 +27,7 @@ class Vector3:
                 self.y - other.y,
                 self.z - other.z
             )
-        raise TypeError('Type is not Vector3.')
+        raise TypeError()
 
     def __mul__(self, other):
         if isinstance(other, Vector3):
@@ -41,30 +42,16 @@ class Vector3:
                 self.y * other,
                 self.z * other
             )
-        raise TypeError('Type is not Vector3.')
+        raise TypeError()
 
     def __str__(self) -> str:
         return f'({self.x},{self.y},{self.z})'
 
-
-if __name__ == '__main__':
-    v1 = Vector3(2, 4, 6)
-    v2 = Vector3(3, 5, 7)
-
-    print(f'v1: {v1}\nv2: {v2}\n\
-----------------\n\
-+: {(v1 + v2)}\n-: {(v1 - v2)}\n\
-*: {(v1 * v2)}\n*: {(v1 * 2)}')
-
-'''
-[Running] python -u "d:\desktop\selfpygame\vector3.py"
-v1: (2,4,6)
-v2: (3,5,7)
-----------------
-+: (5,9,13)
--: (-1,-1,-1)
-*: (6,20,42)
-*: (4,8,12)
-
-[Done] exited with code=0 in 0.097 seconds
-'''
+    def distance(v1, v2) -> float:
+        if isinstance(v1, Vector3) and isinstance(v2, Vector3):
+            diffx = v1.x - v2.x
+            diffy = v1.y - v2.y
+            diffz = v1.z - v2.z
+            return numpy.round(numpy.sqrt(
+                numpy.power(diffx, 2) + numpy.power(diffy, 2) + numpy.power(diffz, 2)), 3)
+        raise TypeError()
