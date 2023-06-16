@@ -43,7 +43,10 @@ class Vector3:
             )
         raise TypeError('Type is not Vector3.')
 
-    def string(self):
+    # def string(self):
+    #     return f'({self.x},{self.y},{self.z})'
+
+    def __str__(self) -> str:
         return f'({self.x},{self.y},{self.z})'
 
 
@@ -51,10 +54,14 @@ if __name__ == '__main__':
     v1 = Vector3(2, 4, 6)
     v2 = Vector3(3, 5, 7)
 
-    print(f'v1: {v1.string()}\nv2: {v2.string()}\n\
+#     print(f'v1: {v1.string()}\nv2: {v2.string()}\n\
+# ----------------\n\
+# +: {(v1 + v2).string()}\n-: {(v1 - v2).string()}\n\
+# *: {(v1 * v2).string()}\n*: {(v1 * 2).string()}')
+    print(f'v1: {v1}\nv2: {v2}\n\
 ----------------\n\
-+: {(v1 + v2).string()}\n-: {(v1 - v2).string()}\n\
-*: {(v1 * v2).string()}\n*: {(v1 * 2).string()}')
++: {(v1 + v2)}\n-: {(v1 - v2)}\n\
+*: {(v1 * v2)}\n*: {(v1 * 2)}')
 
 '''
 [Running] python -u "d:\desktop\selfpygame\vector3.py"
