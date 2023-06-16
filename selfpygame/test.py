@@ -2,6 +2,7 @@
 from vector3 import Vector3
 from mathf import Mathf
 import numpy
+import cmath
 
 
 class OL:
@@ -28,7 +29,13 @@ if __name__ == '__main__':
 
     # print(Mathf.round(Vector3.distance(v1, v2), 1))
 
-    print(Mathf.lerp(0, 1, 5))
+    # print(Mathf.clamp(-0.001, 0, 1))
+
+    # _complex = 2 + 2j
+    # print(numpy.rad2deg(cmath.phase(_complex)))
+
+    print("vector3 true kakezan", v1 * v2)
+    # (-2, 4, -2)
 
 '''
 v1: (2,4,6)

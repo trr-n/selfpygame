@@ -8,8 +8,12 @@ class Mathf:
     def round(n, digit=1):
         return (n * 10 ** digit * 2 + 1) // 2 / 10 ** digit
 
-    def floor(n):
-        return float(numpy.floor(n))
+    def floor(n, digit):
+        '''四捨五入'''
+        return numpy.floor(n, digit)
+
+    def digit(n):
+        return len(str(n).replace('.', ''))
 
     def clamp(target, min=0, max=1):
         if target < min:
