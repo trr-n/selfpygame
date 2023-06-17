@@ -1,12 +1,9 @@
-﻿import numpy
-
-
-class Mathf:
+﻿class MathF:
     def __init__(self) -> None:
         raise Exception('yamete-')
 
     def floor(n, digit):
-        return numpy.floor(n, digit)
+        pass
 
     def round(n, digit=1):
         return (n * 10 ** digit * 2 + 1) // 2 / 10 ** digit
@@ -22,7 +19,7 @@ class Mathf:
         return target
 
     def lerp(o, p, time):
-        return o + (p - o) * Mathf.clamp(time)
+        return o + (p - o) * MathF.clamp(time)
 
     def is_prime(n) -> bool:
         if not isinstance(n, int) or n < 2 or n % 2 == 0:

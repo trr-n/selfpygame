@@ -1,25 +1,17 @@
-﻿from functools import singledispatch
-from vector3 import Vector3
-from mathf import Mathf
+﻿from vector3 import Vector3
+from mathf import MathF
+from randomf import Random
 import numpy
 import cmath
 import random
 
 
-class OL:
-    # overload
-    @singledispatch
-    def computer(n1: int, n2: int):
-        return n1 + n2
-
-    @computer.register
-    def _computer(n1: float, n2: float):
-        return n1 * n2
-
-
 if __name__ == '__main__':
     v1 = Vector3(2, 4, 6)
     v2 = Vector3(3, 5, 7)
+
+    # ol = OL(n1=1, n2=1.0)
+    # print(ol.n1, ol.n2)
 
 #     print(f'v1: {v1}\nv2: {v2}\n\
 # ----------------\n\
@@ -28,7 +20,7 @@ if __name__ == '__main__':
 
     # print(Vector3.distance(v1, v2))
 
-    # print(Mathf.round(Vector3.distance(v1, v2), 1))
+    # print(MathF.round(Vector3.distance(v1, v2), 1))
 
     # _complex = 2 + 2j
     # print(numpy.rad2deg(cmath.phase(_complex)))
@@ -38,10 +30,18 @@ if __name__ == '__main__':
 
     # while True:
     #     r = random.randint(-1, 2)
-    #     print(r, Mathf.clamp(r, 0, 1))
+    #     print(r, MathF.clamp(r, 0, 1))
 
-    for n in range(1, 20, 1):
-        print(f'{n} is prime: {Mathf.is_prime(n)}')
+    # for n in range(1, 20, 1):
+    #     print(f'{n} is prime: {MathF.is_prime(n)}')
+
+    # a = Random.test_gen(0, 10, 10)
+    # for i in a:
+    #     print(i)
+
+    # random = Random()
+    # print(Random().normal_char(1000))
+    # print(random.jp_char())
 
 '''
 v1: (2,4,6)

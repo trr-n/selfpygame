@@ -1,6 +1,6 @@
 from functools import singledispatch
 import typing
-import numpy
+import numpy as np
 
 # ? operators: https://yumarublog.com/python/operator/
 
@@ -72,6 +72,6 @@ class Vector3:
             diffx = v1.x - v2.x
             diffy = v1.y - v2.y
             diffz = v1.z - v2.z
-            return numpy.round(numpy.sqrt(
-                numpy.power(diffx, 2) + numpy.power(diffy, 2) + numpy.power(diffz, 2)), 3)
+            return np.round(np.sqrt(
+                np.power(diffx, 2) + np.power(diffy, 2) + np.power(diffz, 2)), 3)
         raise TypeError()
