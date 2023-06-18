@@ -1,5 +1,5 @@
 ﻿from vector3 import Vector3
-from mathf import MathF
+from mathf import Math
 from randomf import Random
 import numpy
 import cmath
@@ -7,11 +7,8 @@ import random
 
 
 if __name__ == '__main__':
-    v1 = Vector3(2, 4, 6)
-    v2 = Vector3(3, 5, 7)
-
-    # ol = OL(n1=1, n2=1.0)
-    # print(ol.n1, ol.n2)
+    a = Vector3(3, 6, 5)
+    b = Vector3(4, 1, 5)
 
 #     print(f'v1: {v1}\nv2: {v2}\n\
 # ----------------\n\
@@ -19,8 +16,13 @@ if __name__ == '__main__':
 # *: {(v1 * v2)}\n*: {(v1 * 2)}')
 
     # print(Vector3.distance(v1, v2))
+    # print('cross: ', Vector3.cross(v1, v2))
+    # print('dot: ', Vector3.dot(v1, v2))
 
-    # print(MathF.round(Vector3.distance(v1, v2), 1))
+    # print(Vector3.min(a, b))
+    # print(Vector3.max(a, b))
+
+    # print(Math.round(Vector3.distance(v1, v2), 1))
 
     # _complex = 2 + 2j
     # print(numpy.rad2deg(cmath.phase(_complex)))
@@ -30,10 +32,10 @@ if __name__ == '__main__':
 
     # while True:
     #     r = random.randint(-1, 2)
-    #     print(r, MathF.clamp(r, 0, 1))
+    #     print(r, Math.clamp(r, 0, 1))
 
     # for n in range(1, 20, 1):
-    #     print(f'{n} is prime: {MathF.is_prime(n)}')
+    #     print(f'{n} is prime: {Math.is_prime(n)}')
 
     # a = Random.test_gen(0, 10, 10)
     # for i in a:
