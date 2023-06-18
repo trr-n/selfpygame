@@ -16,7 +16,7 @@ class Random: # (random):
         ls = []
         # n = len(chars) if n > len(chars) else n
         for i in range(n := len(chars)-1 if n > len(chars) else n-1):
-            ls.append(chars[Random().generator(0, n)])
+            ls.append(chars[Random().randint(0, n)])
         # print('n: ', n)
         return ls
 
@@ -27,15 +27,20 @@ class Random: # (random):
     def mixed_char(self) -> str:
         return self.__normal_chars + self.__jp_chars
 
-    @singledispatch
-    def generator(self, min: int, max):
+    # @singledispatch
+    def randint(self, min: int, max):
         srandom = random.SystemRandom()
         return srandom.randint(int(min), int(max))
+
+    # @generator.register
+    def uniform(self, min: float, max):
+        srandom = random.SystemRandom()
+        return srandom.uniform(min, max)
 
     def test_gen(self, min, max, n) -> tuple[list, list]:
         old: list[int] = []
         new: list[int] = []
         for _ in range(n):
             old.append(random.randint(min, max))
-            new.append(Random.generator(min, max))
+            new.append(Random.randint(min, max))
         return (old, new)

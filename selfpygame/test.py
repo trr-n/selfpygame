@@ -3,6 +3,7 @@ from mathf import Math
 from randomf import Random
 import numpy
 import cmath
+import math
 import random
 
 
@@ -36,15 +37,11 @@ if __name__ == '__main__':
 
     # for n in range(1, 20, 1):
     #     print(f'{n} is prime: {Math.is_prime(n)}')
+    #     print(Random().normal_char(1000))
+    #     print('int: ', Random().randint(1, 10))
+    #     print('float: ', Random().uniform(1.0, 10))
 
-    # a = Random.test_gen(0, 10, 10)
-    # for i in a:
-    #     print(i)
-
-    # random = Random()
-    # print(Random().normal_char(1000))
-    # print(random.jp_char())
-
+    print(Math.PI)
 '''
 v1: (2,4,6)
 v2: (3,5,7)

@@ -1,4 +1,10 @@
 ﻿class Math:
+    PI = 3.141592653589793
+
+    DEG_2_RAD = PI * 2.0 / 360.0
+
+    RAD_2_DEG = 1.0 / DEG_2_RAD
+
     def __init__(self) -> None:
         raise Exception('yamete-')
 

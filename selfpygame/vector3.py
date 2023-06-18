@@ -25,8 +25,8 @@ class Vector3:
     def __mul__(self, other):
         if isinstance(other, Vector3):
             return Vector3(
-                self.y * other.z - self.z * other.y,
-                self.z * other.x - self.x * other.z,
+                self.y * other.z - self.z * other.y, 
+                self.z * other.x - self.x * other.z, 
                 self.x * other.y - self.y * other.x
             )
         elif isinstance(other, (float, int)):
