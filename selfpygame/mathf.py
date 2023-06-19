@@ -26,7 +26,7 @@
     def is_prime(n) -> bool:
         if not isinstance(n, int):
             raise TypeError('n is not of int type or lower than 2')
-        elif n < 2 or n % 2 == 0:
+        elif n < 2 or (n % 2 == 0 and n != 2):
             return False
         ns = []
         for i in range(2, n, 1):

@@ -35,13 +35,12 @@ if __name__ == '__main__':
     #     r = random.randint(-1, 2)
     #     print(r, Math.clamp(r, 0, 1))
 
-    # for n in range(1, 20, 1):
-    #     print(f'{n} is prime: {Math.is_prime(n)}')
+    for n in range(1, 20, 1):
+        print(f'{n} is prime: {Math.is_prime(n)}')
     #     print(Random().normal_char(1000))
     #     print('int: ', Random().randint(1, 10))
     #     print('float: ', Random().uniform(1.0, 10))
 
-    print(Math.PI)
 '''
 v1: (2,4,6)
 v2: (3,5,7)
