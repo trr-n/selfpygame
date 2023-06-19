@@ -1,4 +1,5 @@
 ﻿from vector3 import Vector3
+from vector2 import Vector2
 from mathf import Math
 from randomf import Random
 import numpy
@@ -10,6 +11,11 @@ import random
 if __name__ == '__main__':
     a = Vector3(3, 6, 5)
     b = Vector3(4, 1, 5)
+
+    aa = Vector2(2, 4)
+    bb = Vector2(4, 9)
+
+    # print(f'+: {aa + bb}\n-: {aa - bb}\n*: {aa * bb}')
 
 #     print(f'v1: {v1}\nv2: {v2}\n\
 # ----------------\n\
@@ -35,8 +41,8 @@ if __name__ == '__main__':
     #     r = random.randint(-1, 2)
     #     print(r, Math.clamp(r, 0, 1))
 
-    for n in range(1, 20, 1):
-        print(f'{n} is prime: {Math.is_prime(n)}')
+    # for n in range(1, 20, 1):
+    #     print(f'{n} is prime: {Math.is_prime(n)}')
     #     print(Random().normal_char(1000))
     #     print('int: ', Random().randint(1, 10))
     #     print('float: ', Random().uniform(1.0, 10))
