@@ -33,8 +33,25 @@
             ns.append(False) if n % i == 0 else ns.append(True)
         return all(ns)
 
+    def is_prime2(n):
+        if not isinstance(n, int):
+            raise TypeError('n is not int')
+        if n < 2 or (n % 2 == 0 and n != 2):
+            return False
+        elif n == 2:
+            return True
+        import math
+        sqrtNum = math.floor(math.sqrt(n))
+        for i in range(3, sqrtNum + 1, 2):
+            if n % i == 0:
+                return False
+        return True
+
     def min(a, b):
         return a if a < b else b
 
     def max(a, b):
         return a if a > b else b
+
+    def sqrt(a):
+        return
