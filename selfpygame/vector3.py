@@ -7,6 +7,9 @@ from mathf import Math
 #? 三次元ベクトルの内積,外積 http://www.math.s.chiba-u.ac.jp/~yasuda/Chiba/Lec/naiseki.pdf
 
 class Vector3:
+    rad2deg = 180 / Math.PI
+    deg2rad = Math.PI / 180
+
     def __init__(self, x: float, y: float, z: float):
         self.x: float = x
         self.y: float = y
@@ -52,9 +55,16 @@ class Vector3:
         self.y = y
         self.z = z
 
+    def magnitude(self):
+        pass
+
     def cross(a, b): return a * b
 
     def dot(a, b): return a.x * b.x + a.y * b.y + a.z * b.z
+
+    @staticmethod
+    def angle(a, b):
+        pass
 
     def distance(a, b) -> float:
         if isinstance(a, Vector3) and isinstance(b, Vector3):
@@ -73,9 +83,6 @@ class Vector3:
         raise TypeError()
 
     def zero(): return Vector3(0, 0, 0)
-
     def one(): return Vector3(1, 1, 1)
-
     def up(): return Vector3(0, 1, 0)
-
     def right(): return Vector3(1, 0, 0)
