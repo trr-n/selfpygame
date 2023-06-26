@@ -56,16 +56,16 @@ class Vector3:
 
     def dot(a, b): return a.x * b.x + a.y * b.y + a.z * b.z
 
-    def distance(a, b) -> float:
-        if isinstance(a, Vector3) and isinstance(b, Vector3):
-            return np.round(np.sqrt(
-                np.power(a.x - b.x, 2) + np.power(a.y - b.y, 2) + np.power(a.z - b.z, 2)), 3)
-        raise TypeError()
+    def normalize(self):
+        return np.sqrt(self.x * self.x + self.y * self.y + self.z * self.z)
 
+    def distance(self, a, b) : 
+        return self.normalize(a-b)
+    
     def min(a, b): 
-        if isinstance(a, Vector3) and isinstance(b, Vector3):
+        # if isinstance(a, Vector3) and isinstance(b, Vector3):
             return Vector3(Math.min(a.x, b.x), Math.min(a.y, b.y), Math.min(a.z, b.z))
-        raise TypeError()
+        # raise TypeError()
 
     def max(a, b): 
         if isinstance(a, Vector3) and isinstance(b, Vector3):
