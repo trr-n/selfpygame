@@ -59,8 +59,8 @@ class Vector3:
     def normalize(self):
         return np.sqrt(self.x * self.x + self.y * self.y + self.z * self.z)
 
-    def distance(self, a, b) : 
-        return self.normalize(a-b)
+    def distance(a, b) : 
+        return Vector3.normalize(a-b)
     
     def min(a, b): 
         # if isinstance(a, Vector3) and isinstance(b, Vector3):

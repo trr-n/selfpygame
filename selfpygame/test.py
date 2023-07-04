@@ -2,11 +2,6 @@
 from vector2 import Vector2
 from mathf import Math
 from randomf import Random
-import numpy
-import cmath
-import math
-import random
-
 
 if __name__ == '__main__':
     a = Vector3(3, 6, 5)
@@ -21,7 +16,7 @@ if __name__ == '__main__':
 # +: {(v1 + v2)}\n-: {(v1 - v2)}\n\
 # *: {(v1 * v2)}\n*: {(v1 * 2)}')
 
-    # print(Vector3.distance(v1, v2))
+    print(Vector3.distance(a, b))
     # print('cross: ', Vector3.cross(v1, v2))
     # print('dot: ', Vector3.dot(v1, v2))
 
