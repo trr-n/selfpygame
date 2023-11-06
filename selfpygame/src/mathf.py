@@ -9,9 +9,9 @@
         raise Exception('yamete-')
 
     def floor(n, digit):
-        pass
+        replaced: str = str(n).replace()
 
-    def round(n, digit=1) -> int | float:
+    def round(n, digit: int = 1) -> int | float:
         return (n * 10 ** digit * 2 + 1) // 2 / 10 ** digit
 
     def digit(n) -> int:
