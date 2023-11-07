@@ -54,17 +54,17 @@ class Lottery(Generic[TSubject]):
             totals.append(total)
 
         random = uniform(0, total)
-        __min: int = 0
-        __max: int = len(totals)-1
-        while __min < __max:
-            __center = (__min+__max) / 2
-            if random > totals[__center]:
-                __min = __center+1
+        _min: int = 0
+        _max: int = len(totals)-1
+        while _min < _max:
+            _center: float = (_min+_max) / 2
+            if random > totals[_center]:
+                _min = _center+1
             else:
-                if random >= (totals[__center-1] if __center > 0 else 0):
-                    return __center
-                __max = __center
-        return __max
+                if random >= (totals[_center-1] if _center > 0 else 0):
+                    return _center
+                _max = _center
+        return _max
 
     @staticmethod
     def weighted(pairs: LotteryPair) -> TSubject:
