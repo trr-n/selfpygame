@@ -1,4 +1,4 @@
-﻿class Box:
+﻿class trrne:
     @staticmethod
     def replace_lump(base: str, befores: list[str], after: str) -> str:
         for i in range(len(befores)):
@@ -12,5 +12,5 @@
     @staticmethod
     def delete_lump(base: str, befores: list[str]) -> str:
         for i in range(len(befores)):
-            base = Box.delete(base, befores[i])
+            base = trrne.delete(base, befores[i])
         return base

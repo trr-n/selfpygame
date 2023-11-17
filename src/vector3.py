@@ -1,17 +1,13 @@
-from functools import singledispatch
-import typing
+import dataclasses
 import numpy as np
 from mathf import Math
 
-# ? オペレーター https://yumarublog.com/python/operator/
-# ? 三次元ベクトルの内積,外積 http://www.math.s.chiba-u.ac.jp/~yasuda/Chiba/Lec/naiseki.pdf
 
-
+@dataclasses.dataclass
 class Vector3:
-    def __init__(self, x: float, y: float, z: float):
-        self.x: float = x
-        self.y: float = y
-        self.z: float = z
+    x: float
+    y: float
+    z: float
 
     def __add__(self, other):
         if isinstance(other, Vector3):
@@ -45,13 +41,7 @@ class Vector3:
         raise TypeError()
 
     def __str__(self) -> str:
-        # return f'({self.x},{self.y},{self.z})'
-        return f'(x:{self.x}, y:{self.y}, z:{self.z})'
-
-    def set(self, x, y, z):
-        self.x = x
-        self.y = y
-        self.z = z
+        return f'({self.x},{self.y},{self.z})'
 
     def cross(a, b): return a * b
 
@@ -64,19 +54,18 @@ class Vector3:
         return Vector3.normalize(a-b)
 
     def min(a, b):
-        # if isinstance(a, Vector3) and isinstance(b, Vector3):
         return Vector3(Math.min(a.x, b.x), Math.min(a.y, b.y), Math.min(a.z, b.z))
-        # raise TypeError()
 
     def max(a, b):
-        if isinstance(a, Vector3) and isinstance(b, Vector3):
-            return Vector3(Math.max(a.x, b.x), Math.max(a.y, b.y), Math.max(a.z, b.z))
-        raise TypeError()
+        return Vector3(Math.max(a.x, b.x), Math.max(a.y, b.y), Math.max(a.z, b.z))
 
-    def zero(): return Vector3(0, 0, 0)
 
-    def one(): return Vector3(1, 1, 1)
+ZERO = Vector3(0, 0)
+ONE = Vector3(1, 1)
+X = Vector3(1, 0)
+Y = Vector3(0, 1)
 
-    def up(): return Vector3(0, 1, 0)
-
-    def right(): return Vector3(1, 0, 0)
+""" 
+https://yumarublog.com/python/operator/
+http://www.math.s.chiba-u.ac.jp/~yasuda/Chiba/Lec/naiseki.pdf
+"""
